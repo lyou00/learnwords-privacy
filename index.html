@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - LearnWords</title>
+    <title>Privacy Policy - LearnWords | سياسة الخصوصية</title>
     <meta name="description" content="Privacy Policy for LearnWords - Learn English Vocabulary App">
     <style>
         * {
@@ -11,7 +12,7 @@
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
             max-width: 800px;
@@ -21,22 +22,28 @@
             color: #333;
             background: linear-gradient(135deg, #f5f7fa 0%, #e4e9f2 100%);
             min-height: 100vh;
+            transition: all 0.3s ease;
         }
-        
+
+        body.rtl {
+            direction: rtl;
+            font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
+        }
+
         .container {
             background: white;
             padding: 40px;
             border-radius: 16px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
         }
-        
+
         .header {
             text-align: center;
             margin-bottom: 40px;
             padding-bottom: 30px;
             border-bottom: 2px solid #e0e0e0;
         }
-        
+
         .logo {
             width: 80px;
             height: 80px;
@@ -50,25 +57,25 @@
             font-size: 32px;
             font-weight: bold;
         }
-        
+
         h1 {
             color: #1a237e;
             font-size: 28px;
             margin-bottom: 10px;
         }
-        
+
         .app-name {
             color: #7c4dff;
             font-size: 18px;
             font-weight: 500;
         }
-        
+
         .updated {
             color: #666;
             font-size: 14px;
             margin-top: 10px;
         }
-        
+
         h2 {
             color: #1976D2;
             margin-top: 35px;
@@ -78,7 +85,7 @@
             align-items: center;
             gap: 10px;
         }
-        
+
         h2::before {
             content: '';
             width: 4px;
@@ -86,22 +93,31 @@
             background: linear-gradient(135deg, #2196F3, #9C27B0);
             border-radius: 2px;
         }
-        
+
+        body.rtl h2::before {
+            order: 1;
+        }
+
         p {
             margin-bottom: 15px;
             color: #555;
         }
-        
+
         ul {
             margin: 15px 0;
             padding-left: 25px;
         }
-        
+
+        body.rtl ul {
+            padding-left: 0;
+            padding-right: 25px;
+        }
+
         li {
             margin-bottom: 10px;
             color: #555;
         }
-        
+
         .highlight {
             background: linear-gradient(135deg, #e3f2fd 0%, #f3e5f5 100%);
             padding: 20px;
@@ -109,28 +125,33 @@
             margin: 20px 0;
             border-left: 4px solid #7c4dff;
         }
-        
+
+        body.rtl .highlight {
+            border-left: none;
+            border-right: 4px solid #7c4dff;
+        }
+
         .highlight strong {
             color: #1a237e;
         }
-        
+
         .contact-box {
             background: #f5f5f5;
             padding: 20px;
             border-radius: 12px;
             margin-top: 20px;
         }
-        
+
         .contact-box a {
             color: #7c4dff;
             text-decoration: none;
             font-weight: 500;
         }
-        
+
         .contact-box a:hover {
             text-decoration: underline;
         }
-        
+
         .footer {
             text-align: center;
             margin-top: 40px;
@@ -139,120 +160,309 @@
             color: #888;
             font-size: 14px;
         }
-        
+
         .languages {
             display: flex;
             justify-content: center;
             gap: 15px;
             margin-top: 20px;
         }
-        
+
         .lang-btn {
-            padding: 8px 16px;
+            padding: 10px 24px;
             border: 2px solid #7c4dff;
-            border-radius: 8px;
+            border-radius: 25px;
             color: #7c4dff;
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s;
+            background: transparent;
+            font-weight: 600;
+            font-size: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
-        
-        .lang-btn:hover, .lang-btn.active {
-            background: #7c4dff;
+
+        .lang-btn:hover {
+            background: rgba(124, 77, 255, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .lang-btn.active {
+            background: linear-gradient(135deg, #7c4dff 0%, #9C27B0 100%);
             color: white;
+            border-color: transparent;
+            box-shadow: 0 4px 15px rgba(124, 77, 255, 0.4);
         }
-        
+
+        /* Content visibility */
+        .content-en,
+        .content-ar {
+            display: none;
+        }
+
+        body.lang-en .content-en {
+            display: block;
+        }
+
+        body.lang-ar .content-ar {
+            display: block;
+        }
+
+        body.lang-en .content-ar,
+        body.lang-ar .content-en {
+            display: none;
+        }
+
         @media (max-width: 600px) {
             .container {
                 padding: 25px;
             }
-            
+
             h1 {
                 font-size: 24px;
+            }
+
+            .lang-btn {
+                padding: 8px 16px;
+                font-size: 14px;
             }
         }
     </style>
 </head>
-<body>
+
+<body class="lang-en">
     <div class="container">
         <div class="header">
             <div class="logo">LW</div>
-            <h1>Privacy Policy</h1>
-            <div class="app-name">LearnWords - Learn English Vocabulary</div>
-            <div class="updated">Last updated: December 2024</div>
+
+            <!-- Language Switcher -->
+            <div class="languages">
+                <button class="lang-btn active" id="btn-en" onclick="switchLang('en')">
+                    🇬🇧 English
+                </button>
+                <button class="lang-btn" id="btn-ar" onclick="switchLang('ar')">
+                    🇸🇦 العربية
+                </button>
+            </div>
         </div>
-        
-        <h2>Overview</h2>
-        <p>LearnWords ("we", "our", or "the app") is committed to protecting your privacy. This Privacy Policy explains how we handle information when you use our mobile application.</p>
-        
-        <div class="highlight">
-            <strong>🔒 Key Point:</strong> LearnWords does not collect, store, or share any personal information. Your data stays on your device.
+
+        <!-- ========== ENGLISH CONTENT ========== -->
+        <div class="content-en">
+            <div class="header" style="border-bottom: none; margin-bottom: 20px; padding-bottom: 0;">
+                <h1>Privacy Policy</h1>
+                <div class="app-name">LearnWords - Learn English Vocabulary</div>
+                <div class="updated">Last updated: December 2024</div>
+            </div>
+
+            <h2>Overview</h2>
+            <p>LearnWords ("we", "our", or "the app") is committed to protecting your privacy. This Privacy Policy
+                explains how we handle information when you use our mobile application.</p>
+
+            <div class="highlight">
+                <strong>🔒 Key Point:</strong> LearnWords does not collect, store, or share any personal information.
+                Your data stays on your device.
+            </div>
+
+            <h2>Data Collection</h2>
+            <p><strong>We do not collect any personal information.</strong></p>
+            <p>LearnWords is designed to operate entirely offline. We do not require you to create an account, provide
+                an email address, or share any personal details to use the app.</p>
+
+            <h2>Data Storage</h2>
+            <p>All app data is stored locally on your device using secure local storage. This includes:</p>
+            <ul>
+                <li><strong>Learning Progress:</strong> Your word mastery levels and study statistics</li>
+                <li><strong>Favorites:</strong> Words you've marked as favorites</li>
+                <li><strong>Settings:</strong> Your app preferences (theme, language, etc.)</li>
+                <li><strong>Quiz Results:</strong> Your test scores and performance history</li>
+            </ul>
+            <p>This data never leaves your device and is not accessible to us or any third party.</p>
+
+            <h2>Third-Party Services</h2>
+            <p>This app does not integrate with any third-party analytics, advertising, tracking, or social media
+                services. We do not use:</p>
+            <ul>
+                <li>Google Analytics or similar tracking tools</li>
+                <li>Advertising networks</li>
+                <li>Social media SDKs</li>
+                <li>Crash reporting services that collect personal data</li>
+            </ul>
+
+            <h2>Internet Permission</h2>
+            <p>The app may request internet permission for the following purpose only:</p>
+            <ul>
+                <li><strong>Text-to-Speech:</strong> To provide pronunciation for English words (using your device's
+                    built-in TTS engine)</li>
+            </ul>
+            <p>No personal data is transmitted during this process.</p>
+
+            <h2>Children's Privacy</h2>
+            <p>LearnWords is suitable for users of all ages, including children under 13. Since we do not collect any
+                personal information from any user, we are compliant with the Children's Online Privacy Protection Act
+                (COPPA) and similar regulations.</p>
+
+            <h2>Data Security</h2>
+            <p>Since all data is stored locally on your device, the security of your data depends on your device's
+                security settings. We recommend:</p>
+            <ul>
+                <li>Using a screen lock on your device</li>
+                <li>Keeping your device's operating system updated</li>
+                <li>Being cautious about installing apps from unknown sources</li>
+            </ul>
+
+            <h2>Your Rights</h2>
+            <p>You have complete control over your data:</p>
+            <ul>
+                <li><strong>Delete:</strong> Uninstalling the app removes all related data from your device</li>
+                <li><strong>Reset:</strong> You can reset your progress through the app's settings</li>
+                <li><strong>Export:</strong> Your data is stored locally and can be backed up with your device backup
+                </li>
+            </ul>
+
+            <h2>Changes to This Policy</h2>
+            <p>We may update this Privacy Policy from time to time. Any changes will be reflected on this page with an
+                updated "Last updated" date. We encourage you to review this policy periodically.</p>
+
+            <h2>Contact Us</h2>
+            <p>If you have any questions, concerns, or requests regarding this Privacy Policy or our privacy practices,
+                please contact us:</p>
+
+            <div class="contact-box">
+                <p><strong>📧 Email:</strong> <a href="mailto:support@cyberpro.yemen">support@cyberpro.yemen</a></p>
+                <p><strong>🏢 Developer:</strong> CyberPro Yemen</p>
+            </div>
         </div>
-        
-        <h2>Data Collection</h2>
-        <p><strong>We do not collect any personal information.</strong></p>
-        <p>LearnWords is designed to operate entirely offline. We do not require you to create an account, provide an email address, or share any personal details to use the app.</p>
-        
-        <h2>Data Storage</h2>
-        <p>All app data is stored locally on your device using secure local storage. This includes:</p>
-        <ul>
-            <li><strong>Learning Progress:</strong> Your word mastery levels and study statistics</li>
-            <li><strong>Favorites:</strong> Words you've marked as favorites</li>
-            <li><strong>Settings:</strong> Your app preferences (theme, language, etc.)</li>
-            <li><strong>Quiz Results:</strong> Your test scores and performance history</li>
-        </ul>
-        <p>This data never leaves your device and is not accessible to us or any third party.</p>
-        
-        <h2>Third-Party Services</h2>
-        <p>This app does not integrate with any third-party analytics, advertising, tracking, or social media services. We do not use:</p>
-        <ul>
-            <li>Google Analytics or similar tracking tools</li>
-            <li>Advertising networks</li>
-            <li>Social media SDKs</li>
-            <li>Crash reporting services that collect personal data</li>
-        </ul>
-        
-        <h2>Internet Permission</h2>
-        <p>The app may request internet permission for the following purpose only:</p>
-        <ul>
-            <li><strong>Text-to-Speech:</strong> To provide pronunciation for English words (using your device's built-in TTS engine)</li>
-        </ul>
-        <p>No personal data is transmitted during this process.</p>
-        
-        <h2>Children's Privacy</h2>
-        <p>LearnWords is suitable for users of all ages, including children under 13. Since we do not collect any personal information from any user, we are compliant with the Children's Online Privacy Protection Act (COPPA) and similar regulations.</p>
-        
-        <h2>Data Security</h2>
-        <p>Since all data is stored locally on your device, the security of your data depends on your device's security settings. We recommend:</p>
-        <ul>
-            <li>Using a screen lock on your device</li>
-            <li>Keeping your device's operating system updated</li>
-            <li>Being cautious about installing apps from unknown sources</li>
-        </ul>
-        
-        <h2>Your Rights</h2>
-        <p>You have complete control over your data:</p>
-        <ul>
-            <li><strong>Delete:</strong> Uninstalling the app removes all related data from your device</li>
-            <li><strong>Reset:</strong> You can reset your progress through the app's settings</li>
-            <li><strong>Export:</strong> Your data is stored locally and can be backed up with your device backup</li>
-        </ul>
-        
-        <h2>Changes to This Policy</h2>
-        <p>We may update this Privacy Policy from time to time. Any changes will be reflected on this page with an updated "Last updated" date. We encourage you to review this policy periodically.</p>
-        
-        <h2>Contact Us</h2>
-        <p>If you have any questions, concerns, or requests regarding this Privacy Policy or our privacy practices, please contact us:</p>
-        
-        <div class="contact-box">
-            <p><strong>📧 Email:</strong> <a href="mailto:support@cyberpro.yemen">support@cyberpro.yemen</a></p>
-            <p><strong>🏢 Developer:</strong> CyberPro Yemen</p>
+
+        <!-- ========== ARABIC CONTENT ========== -->
+        <div class="content-ar">
+            <div class="header" style="border-bottom: none; margin-bottom: 20px; padding-bottom: 0;">
+                <h1>سياسة الخصوصية</h1>
+                <div class="app-name">LearnWords - تعلم مفردات اللغة الإنجليزية</div>
+                <div class="updated">آخر تحديث: ديسمبر 2024</div>
+            </div>
+
+            <h2>نظرة عامة</h2>
+            <p>تلتزم LearnWords ("نحن" أو "لدينا" أو "التطبيق") بحماية خصوصيتك. توضح سياسة الخصوصية هذه كيفية تعاملنا مع
+                المعلومات عند استخدامك لتطبيقنا على الهاتف المحمول.</p>
+
+            <div class="highlight">
+                <strong>🔒 نقطة مهمة:</strong> تطبيق LearnWords لا يجمع أو يخزن أو يشارك أي معلومات شخصية. بياناتك تبقى
+                على جهازك فقط.
+            </div>
+
+            <h2>جمع البيانات</h2>
+            <p><strong>نحن لا نجمع أي معلومات شخصية.</strong></p>
+            <p>تم تصميم LearnWords للعمل بشكل كامل بدون إنترنت. لا نطلب منك إنشاء حساب أو تقديم عنوان بريد إلكتروني أو
+                مشاركة أي تفاصيل شخصية لاستخدام التطبيق.</p>
+
+            <h2>تخزين البيانات</h2>
+            <p>يتم تخزين جميع بيانات التطبيق محليًا على جهازك باستخدام التخزين المحلي الآمن. يشمل ذلك:</p>
+            <ul>
+                <li><strong>تقدم التعلم:</strong> مستويات إتقانك للكلمات وإحصائيات الدراسة</li>
+                <li><strong>المفضلة:</strong> الكلمات التي حددتها كمفضلة</li>
+                <li><strong>الإعدادات:</strong> تفضيلات التطبيق الخاصة بك (المظهر، اللغة، إلخ)</li>
+                <li><strong>نتائج الاختبارات:</strong> درجاتك في الاختبارات وسجل الأداء</li>
+            </ul>
+            <p>هذه البيانات لا تغادر جهازك أبدًا ولا يمكننا نحن أو أي طرف ثالث الوصول إليها.</p>
+
+            <h2>خدمات الطرف الثالث</h2>
+            <p>هذا التطبيق لا يتكامل مع أي خدمات تحليلات أو إعلانات أو تتبع أو وسائل تواصل اجتماعي من طرف ثالث. نحن لا
+                نستخدم:</p>
+            <ul>
+                <li>Google Analytics أو أدوات تتبع مماثلة</li>
+                <li>شبكات الإعلانات</li>
+                <li>أدوات تطوير وسائل التواصل الاجتماعي</li>
+                <li>خدمات الإبلاغ عن الأعطال التي تجمع بيانات شخصية</li>
+            </ul>
+
+            <h2>إذن الإنترنت</h2>
+            <p>قد يطلب التطبيق إذن الإنترنت للغرض التالي فقط:</p>
+            <ul>
+                <li><strong>تحويل النص إلى كلام:</strong> لتوفير نطق الكلمات الإنجليزية (باستخدام محرك TTS المدمج في
+                    جهازك)</li>
+            </ul>
+            <p>لا يتم نقل أي بيانات شخصية خلال هذه العملية.</p>
+
+            <h2>خصوصية الأطفال</h2>
+            <p>تطبيق LearnWords مناسب للمستخدمين من جميع الأعمار، بما في ذلك الأطفال دون سن 13 عامًا. نظرًا لأننا لا
+                نجمع أي معلومات شخصية من أي مستخدم، فنحن ملتزمون بقانون حماية خصوصية الأطفال على الإنترنت (COPPA)
+                واللوائح المماثلة.</p>
+
+            <h2>أمان البيانات</h2>
+            <p>نظرًا لأن جميع البيانات مخزنة محليًا على جهازك، فإن أمان بياناتك يعتمد على إعدادات أمان جهازك. نوصي بـ:
+            </p>
+            <ul>
+                <li>استخدام قفل الشاشة على جهازك</li>
+                <li>الحفاظ على تحديث نظام تشغيل جهازك</li>
+                <li>توخي الحذر عند تثبيت التطبيقات من مصادر غير معروفة</li>
+            </ul>
+
+            <h2>حقوقك</h2>
+            <p>لديك السيطرة الكاملة على بياناتك:</p>
+            <ul>
+                <li><strong>الحذف:</strong> إلغاء تثبيت التطبيق يزيل جميع البيانات المتعلقة من جهازك</li>
+                <li><strong>إعادة التعيين:</strong> يمكنك إعادة تعيين تقدمك من خلال إعدادات التطبيق</li>
+                <li><strong>التصدير:</strong> بياناتك مخزنة محليًا ويمكن نسخها احتياطيًا مع نسخة جهازك الاحتياطية</li>
+            </ul>
+
+            <h2>التغييرات على هذه السياسة</h2>
+            <p>قد نقوم بتحديث سياسة الخصوصية هذه من وقت لآخر. ستنعكس أي تغييرات على هذه الصفحة مع تاريخ "آخر تحديث"
+                محدث. نشجعك على مراجعة هذه السياسة بشكل دوري.</p>
+
+            <h2>اتصل بنا</h2>
+            <p>إذا كانت لديك أي أسئلة أو مخاوف أو طلبات بخصوص سياسة الخصوصية هذه أو ممارسات الخصوصية لدينا، يرجى الاتصال
+                بنا:</p>
+
+            <div class="contact-box">
+                <p><strong>📧 البريد الإلكتروني:</strong> <a
+                        href="mailto:support@cyberpro.yemen">support@cyberpro.yemen</a></p>
+                <p><strong>🏢 المطور:</strong> CyberPro Yemen</p>
+            </div>
         </div>
-        
+
         <div class="footer">
-            <p>© 2024 CyberPro Yemen. All rights reserved.</p>
+            <p class="content-en">© 2024 CyberPro Yemen. All rights reserved.</p>
+            <p class="content-ar">© 2024 CyberPro Yemen. جميع الحقوق محفوظة.</p>
             <p>LearnWords - Learn English Vocabulary</p>
         </div>
     </div>
+
+    <script>
+        function switchLang(lang) {
+            const body = document.body;
+            const btnEn = document.getElementById('btn-en');
+            const btnAr = document.getElementById('btn-ar');
+            const html = document.documentElement;
+
+            if (lang === 'ar') {
+                body.classList.remove('lang-en');
+                body.classList.add('lang-ar', 'rtl');
+                html.setAttribute('lang', 'ar');
+                html.setAttribute('dir', 'rtl');
+                btnAr.classList.add('active');
+                btnEn.classList.remove('active');
+            } else {
+                body.classList.remove('lang-ar', 'rtl');
+                body.classList.add('lang-en');
+                html.setAttribute('lang', 'en');
+                html.setAttribute('dir', 'ltr');
+                btnEn.classList.add('active');
+                btnAr.classList.remove('active');
+            }
+
+            // Save preference
+            localStorage.setItem('preferred-lang', lang);
+        }
+
+        // Load saved preference on page load
+        document.addEventListener('DOMContentLoaded', function () {
+            const savedLang = localStorage.getItem('preferred-lang');
+            if (savedLang) {
+                switchLang(savedLang);
+            }
+        });
+    </script>
 </body>
+
 </html>
